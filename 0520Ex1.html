@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+	<style>
+		body{background-color:linen; color:green;
+			 margin:0px 40px 0px 40px;}
+		h2{text-align : center; color:darkred;}
+		hr{height:5px; border:solid grey;
+		   background-color: grey}
+		span{color:blue; font-size:20px;}
+		div#A{width:800px; height:600px;
+		      border:2px solid white;}
+	</style>
+	<script>
+		function show(){
+			document.getElementById("fig").src = "images/spongebob.png";
+		}
+		function hide(){
+			document.getElementById("fig").src = "";
+		}
+	</script>
+  <title>웹 페이지의 구성 요소</title>
+ </head>
+ <body>
+  <div id = "A">
+    <h2 onmouseover="show()" onmouseout="hide()"> Elvis Presley </h2>
+    <hr>
+    <div><img id="fig" src=""></div>
+    	He was an American singer and actor.<br>
+    	In November 1956, he made his film debut in <span>Love Me 
+	    Tender</span>.<br>
+    	He is often referred to as "<span>the King of Rock and Roll</span>".
+   </div>
+ </body>
+</html>
+
