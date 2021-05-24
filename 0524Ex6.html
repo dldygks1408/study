@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    h1#main title{margin-left:100px;}
+    div#signin{border:2px solid black; width:400px; height:250px;
+			   padding:25px;}
+  </style>
+ </head>
+ <body>
+   <h2 id='main title'>amazon</h2>
+     <div id='signin'>
+	   <h3>Sign in</h3>
+	   <from name= "fo" method="post">
+	   <strong>Email or mobile phone number</strong><br>
+	   <input type='text'; size='50'; value='abc@abc.a.b'><br><br>
+	   <strong>Password</strong>　　　　　　　　　　
+	   <a href=""><span><small>Forgot your password?</small></span></a><br>
+	   <input type='password'; size='50'; value=''><br><br>
+	   <button type='submit'; size='50';>Sign In</button>
+	 </div>
+   <hr>
+     <div>
+	   <h2><strong>자기 소개서 작성</strong></h2>
+	   <hr>
+	   이름 : <input type='text'; size='30'; value='';><br>
+	   암호 : <input type='password'; size='30' value='';><br>
+	   자소서 : <textarea cols='20'; rows='5'; size='25';>작성하세요</textarea><br>
+	 </div>
+   <hr>
+     <form>
+	   <h2>가보고 싶은 곳</h2>
+	   <hr>
+	   나라 : <input type='text' list='countries'><br>
+			 <datalist id='countries'>
+			   <option value='가나'>
+			   <option value='스위스'>
+			   <option value='브라질'>
+			 </datalist>
+	   보고싶은것 : <input type='text' list='what'><br>
+				  <datalist id='what'>
+				    <option value='산'>					
+					<option value='스위스'>
+				    <option value='브라질'>
+				  </datalist>
+	 </form>
+   <hr>
+     <h2>버튼을 만들자</h2>
+	 <hr>
+	 <form>
+	   검색 : <input type='text' size='10' value=''>
+			 <input type='button' value='Q1'>
+			 <button type='button'>Q2</button><br>
+	   submit 버튼 : <input type='submit' value='전송1'>
+					<button type='submit'>전송2</button><br>
+	   reset 버튼 : <input type='reset' value='리셋1'>
+				   <button type='reset'>리셋2</button><br>
+	   이미지 버튼 : <input type='image'																src='D:\java_class\html_workspace\images\button.png' alt='이미지 버튼'>
+				  <button type='button'>
+				  <img src='D:\java_class\html_workspace\images\button.png' alt='이미지 버튼'>
+				  </button>
+	 </form>
+
+ </body>
+</html>
