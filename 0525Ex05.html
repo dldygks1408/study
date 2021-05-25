@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>박스 모델</title>
+	<style>
+		body{background: ghostwhite;}
+		div.box{background: yellow; border-style:solid; border-color:peru;
+						margin:auto; border-width:30px; padding:20px; width:300px;
+						}
+		.box > span{background-color:lightblue;}
+		h2{text-align:center;}
+		p.box1{border-width:3px; border-style: dotted; border-color:blue;
+					padding:10px; width:200px;}
+		div{background: yellow; padding:20px; border:5px dotted red; margin:30px;
+				width:150px;}
+		#p1{display:inline-block; padding:5px; margin:20px;}
+	</style>
+ </head>
+
+ <body>
+	<h2>박스 모델</h2>
+	<hr>
+		<div class='box'>
+		<span>DIV DIV DIV</span>
+		</div>
+		<p class='box1'>박스 모델</p>
+	<hr>
+		<p>margin 30px, padding 20px, border 5px의 빨간색 점선</p>
+	<hr>
+		<div>
+			<img src='D:\java_class\html_workspace\images\mio.png' alt='고양이 눈'>
+		</div>
+	<hr>
+	<h2>다양한 테두리</h2>
+	<hr>
+		<p id='p1' style='border:3px solid blue'>3픽셀 solid </p>
+		<p id='p1' style='border:3px none blue'>3픽셀 none </p>
+		<p id='p1' style='border:3px hidden blue'>3픽셀 hidden </p>
+		<p id='p1' style='border:3px dotted blue'>3픽셀 dotted </p>
+		<p id='p1' style='border:3px dashed blue'>3픽셀 dashed </p>
+		<p id='p1' style='border:3px double blue'>3픽셀 double </p>
+		<p style='border:15px groove yellow'>15픽셀 groove</p>
+		<p style='border:15px ridge yellow'>15픽셀 ridge</p>
+		<p style='border:15px inset yellow'>15픽셀 inset</p>
+		<p style='border:15px outset yellow'>15픽셀 outset</p>
+ </body>
+</html>

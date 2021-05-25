@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>부모 스타일 상속</title>
+	<link type='text/css' rel='stylesheet' href='D:\java_class\html_workspace\css\external.css'>
+	<style>
+		body{background:lightblue;}
+		p.p1{color:blue; font-size: 12px; }
+		ul#list{background:#ffff00;}
+		li:hover{background:#99ff33;}
+		h3:first-letter{color:red;}
+		ul strong{color:dodgerblue;}
+		div > mark{font-size:30px;}
+		div#divma{margin:0px 50px 10px 50px; display:inline;}
+		p#p2{text-indent:3em; text-align: justify;}
+		p#p3{text-indent:1em; text-align:center;}
+		#p3 > strong{text-decoration: overline;}
+		div#ex4{font-family: 'Times New Roman', Serif; font-size:large;}
+		h2#hx4{font:italic bold 40px consolas, sans-serif;}
+	</style>
+ </head>
+ <body>
+  <h3>부모 스타일 상속</h3>
+	<hr>
+		<p style='color:green'>자식 태그는 부모의 스타일을 <em style='font-size:25px'>상속</em> 받는다.
+	</p>
+	<hr>
+	<h3>p 태그의 스타일 중첩</h3>
+	<hr>
+		<p class='p1'>Hello, students!</p>
+		<p class='p1' style='font-size:25px'>안녕하세요 교수님!</p>
+	<hr>
+	<h3 id='w'>Web Programming</h3>
+	<hr>
+		<div>2학기 <mark><strong>학습 내용</strong></mark></div>
+		<ul id='list'>
+			<li>HTML5
+			<li><strong>CSS</strong>
+			<li>JAVASCRIPT
+		</ul>
+		<div>60점 이하는 F!</div>
+		 <hr>
+	<h2>CSS3 색 활용</h2>
+		<div id='divma' style='background-color:deepskyblue';>deepskyblue(#00BFFF)</div>
+		<div id='divma' style='background-color:brown'>brown(#A52A2A)</div>
+		<div id='divma' style='background-color:fuchsia'>fuchsia(#FF00FF)</div>
+		<div id='divma' style='background-color:darkorange'>darkorange(#FF8C00)</div>
+		<div id='divma' style='background-color:darkcyan'>darkcyan(#008B8B)</div>
+		<div id='divma' style='background-color:olivedrab'>olivedrab(#6B8E23)</div>
+	<hr>
+	<h2>텍스트 꾸미기</h3>
+	<hr>
+		<p id='p2'>HTML의 태그만으로 기존의 워드 포로세서와 같이 들여쓰기, 정렬, 공백, 간격 등과 세밀한 
+		<span>텍스트 제어</span>를 할 수 없다.</p>
+		<br>
+		<p id='p3'>그러나, <strong>스타일 시트</strong>는 이를 가능하게 한다. 들여쓰기, 정렬에 대해서 알아본다.</p>
+		<a href="http://www.naver.com" style='text-decoration:none'>밑줄이 없는 네이버 링크</a>
+	<hr>
+	<div id='ex4'>
+	<h2 id='hx4'>Consolas font</h2>
+	<hr>
+		<p style='font-weight:900'> font-weight 900 </p>
+		<p style='font-weight:100'> font-weight 100 </p>
+		<p style='font-style:italic'> Italic Style </p>
+		<p style='font-style:oblique'> Oblique Style </p>
+		<p style='font-size:1.5em'> 1.5배 </p>
+	</div>
+ </body> 
+</html>
