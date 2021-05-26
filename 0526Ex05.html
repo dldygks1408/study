@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		#nav{background:olive;}
+		#nav>ul{margin:auto; padding: 10px; width:567px;}
+		#nav>ul>li{display:inline-block; list-style-type:none;
+		padding:0px 15px; }
+		#nav>ul>li>a{color:white; text-decoration:none;}
+		#nav>ul>li>a:hover{color:violet;}
+		table{border:1px solid blue; border-collapse:collapse;margin:auto;}
+		thead,tfoot{background:darkgray; color:yellow;}
+		thead th{width:100px; height:50px;}
+		td,th{border:1px dotted green; width:100px; height:30px;}
+		tbody tr:nth-child(even){background:aliceblue;}
+		table tr:hover{background:pink;}
+		h2{text-align:center}
+		hr{border:1px dotted gray;}
+		label:hover{background:aliceblue;}
+		input[type=text]{color:red; font-size:120%;}
+		@keyframes textColorAnimation{
+		0%{color:blue;} 30%{color:green;} 100%{color:red;}}
+		span{animation-name:textColorAnimation;
+				animation-duration:3s;
+				animation-iteration-count:infinite;
+				font-size:40px;}
+		@keyframes bomb{from{font-size:500%;} to{font-size: 100%;}}
+		h3{animation-name:bomb;
+			animation-duration:3s;
+			animation-iteration-count:infinite;}
+	</style>
+ </head>
+ <body>
+ <nav id='nav'>
+	<ul>
+		<li><a href='#'>Home</a>
+		<li><a href='#'>Espresso</a>
+		<li><a href='#'>Cappuccino</a>
+		<li><a href='#'>Cafe Latte</a>
+		<li><a href='#'>F.A.Q</a>
+	</ul>
+ </nav>
+ <h2>1학기 성적</h2>
+ <hr>
+ <table>
+	<thead>
+		<tr><th>이름</th><th>HTML</th><th>CSS</th></tr>
+	</thead>
+	<tfoot>
+		<tr><th>합</th><th>310</th><th>249</th></tr>
+	</tfoot>
+	<tbody>
+		<tr><th>황기태</th><th>80</th><th>70</th></tr>
+		<tr><th>이재문</th><th>95</th><th>99</th></tr>
+		<tr><th>이병은</th><th>85</th><th>90</th></tr>
+		<tr><th>김남윤</th><th>50</th><th>40</th></tr>
+	</tbody>
+ </table>
+ <hr>
+ <h2>CONTACT US</h2>
+ <hr>
+	<label>
+		Name <input type='text' size='30'>
+	</label><br><br>
+	<label>
+		Email <input type='email' size='30'
+					placeholder='abc@abc.com'>
+	</label><br><br>
+	<label>
+		Comment <textarea placeholder='메시지를 남겨주세요' size='30'>
+	</textarea>
+	</label><br>
+	<input type='submit'><br>
+	<p><span>span</span><br>알록달록</p>
+	<hr>
+	<h3>꽝!</h3>
+	<hr>
+	<p>꽝! 글자가 3총동안 500%에서 시작하여 100%로 바뀌는 애니메이션입니다. 무한반복</p>
+ </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+	<style>
+		p{width:15em; height:3em; border:1px solid black;}
+		.hi { overflow : hidden; }
+		.vi { overflow : visible; }
+		.sc { overflow : scroll; }
+		ul{background:goldenrod; padding:10px 10px 10px 50px;
+			list-style-image:url("..\..\images\marker.png");}
+		ul>li{background:greenyellow; margin-bottom:10px;
+					list-style-position:outside;}
+	</style>
+  <title>overflow 프로퍼티</title>
+ </head>
+ <body>
+  <h2>overflow 프로퍼티</h2>
+	<hr>
+	<p class='hi'>overflow에 hidden 값을 적용하면 박스를 넘어가는 내용이 잘려서 보이지 않습니다.</p><br>
+	<p class='vi'>overflow에 visible 값을 적용하면 박스를 넘어가는 내용이 잘려서 보이지 않습니다.</p><br> 
+	<p class='sc'>overflow에 scroll 값을 적용하면 박스를 넘어가는 내용이 잘려서 보이지 않습니다.</p><br>
+	<hr>
+	<h2>커피 메뉴</h2>
+	<hr>
+	<ul>
+		<li>Espresso
+		<li>Cappuccino
+		<li>Cafe Latte
+	</ul>
+ </body>
+</html>

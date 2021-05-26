@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		div>div{background-color:red; width:100px; height:100px;												display:inline-block; margin:10px; font-size:30px; text-align:center}
+		#box2:hover{background-color:green; position:absolute;
+								left:20px; top:20px;} /* 절대 배치-position:absolute */
+		#box5:hover{background-color:green; position:relative;
+								right:20px; bottom:20px;}/* 상대 배치-position:relative */
+		h2.hh{height:200px; border:2px green dashed;}
+		img{position:relative; display:inline-block; border:1px solid black;}
+		div>p{display:inline-block; position:absolute; height:20px; width:15px;
+					background:lightblue;}
+		#fixed{position: fixed; bottom:50px; right:575px; width:100px;
+					padding:5px; background:red; color: white;}
+		#float{border:1px dotted black; width:8em;
+					padding: 0.25em; margin:1em; float:right;}
+		#rrr{border:1px dotted black; width:10em;
+					padding: 0.25em; margin:1em; float:left;}
+		#main{border:1px dotted black; clear:both;}
+	</style>
+ </head>
+ <body style='border:2px black dashed'>
+	<h2 class='hh'>Box 위치 설정</h2>
+	<div>
+		<div id='box1'>T</div>
+		<div id='box2'>h</div>
+		<div id='box3'>a</div>
+		<div id='box4'>n</div>
+		<div id='box5'>k</div>
+		<div id='box6'>s</div>
+	</div>
+	<hr>
+	<h2>Merry Christmas!</h2>
+	<hr>
+		<p>예수님이 탄생하셨습니다.</p>
+		<div class='cc'>
+			<img src='..\..\images\christmastree.png'; alt='트리'
+					width='200px' height='300px'>
+			<p style='left:100px; top:500px'>M</p>
+			<p style='left:60px; top:560px'>E</p>
+			<p style='left:80px; top:620px'>R</p>
+			<p style='left:150px; top:680px'>R</p>
+			<p style='left:50px; top:680px'>Y</p>
+		</div>
+		<div id='fixed'>예수님이 탄생하셨습니다.</div>
+	<hr>
+	<h2>학기말 공지</h2>
+	<hr>
+		<p id='rrr'>이제 곧 겨울 방학이 시작됩니다. 학기 중 못다한 Java, C++ 프로그래밍 열심히 하기 바랍니다.
+		인턴을 준비하는 학생들은 프로젝트 개발에 더욱 힘쓰세요. 그럼 다음 학기에 만나요.</p>
+		<p id='float'>24일은 피아니스트 조성진의 크리스마스 특별 연주가 있습니다.</p>
+		<p id='main'>이제 곧 겨울 방학이 시작됩니다. 학기 중 못다한 Java, C++ 프로그래밍 열심히 하기 바랍니다.
+		인턴을 준비하는 학생들은 프로젝트 개발에 더욱 힘쓰세요. 그럼 다음 학기에 만나요.</p>
+ </body>
+</html>

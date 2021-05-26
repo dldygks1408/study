@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Inline, Inline-Block, Block 활용</title>
+	<style>
+		span{width:200px; height:60px;border:1px solid black;
+				text-align:center;background:lightblue; margin:20px;}
+		div{border:2px solid yellowgreen; color:blue; background:aliceblue;}
+	</style>
+ </head>
+ <body>
+	<h2>&lt;span&gt; display:block 활용
+		<hr>
+		<div>
+			<span style='display:block'>block span</span>과
+			<span style='display:block'>block span</span>입니다.
+		</div>
+		<hr>
+		나는 <div style='display:none'>div(none)</div>입니다.<br>
+		나는 <div style='display:inline'>div(inline)</div>입니다.<br>
+		나는 <div style='display:inline-block'>div(inline-block)</div>입니다.<br>
+		나는 <div>div<span style='display:block'>
+				<a href="javascript:alert('클릭')">span(block)</a> </span>입니다.</div>
+ </body>
+</html>
