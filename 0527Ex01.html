@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>이벤트 리스너 속성에 자바스크립트 코드</title>
+	<script src="0527Ex01_JavaS.js">
+	/*	function over(obj){
+			obj.src="..\..\images\banana.png";
+		}
+		function out(obj){
+			obj.src='..\..\images\apple.png';
+		}*/
+	</script>
+ </head>
+ <body>
+	<h3>마우스 올려 보세요</h3>
+	<hr>
+	<img src='../../images/apple.png' alt='이미지'
+			onmouseover="this.src='../../images/banana.png'"
+			onmouseout="this.src='../../images/apple.png'">
+
+	<img src='../../images/apple.png' alt="이미지"
+			onmouseover="over(this)"
+			onmouseout="out(this)">
+	<img src='../../images/banana.png'>
+
+	<img src="../../images/apple.png" alt="이미지" 
+			onmouseover="this.src='../../images/banana.png'"
+			onmouseout="this.src='../../images/apple.png'"><br>
+	
+	<a href='javascript:alert("클릭")'>클릭</a><br>
+
+ </body>
+</html>

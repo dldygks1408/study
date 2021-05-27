@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>document.write() 활용</title>
+ </head>
+ <body>
+  <h3>document.write() 활용</h3>
+	<hr>
+	<script>
+		document.write("<h3>Welcome!</h3>");
+		document.write("2 + 5 는 <br>");
+		document.write("<mark>7 입니다.</mark><br>");
+		var ret = prompt("이름을 입력하세요","홍길동");
+		if(ret==null){
+			document.write("취소 누름");
+		}
+		else if(ret==""){
+			document.write("공백 입력");
+		}
+		else{
+			document.write('입력값'+ret);
+		}
+		var ret = confirm("전송할까요?");
+		if(ret == true){
+			document.write("전송 완료");
+		}
+		else{
+			document.write("전송 취소");
+		}
+	</script>
+ </body>
+</html>

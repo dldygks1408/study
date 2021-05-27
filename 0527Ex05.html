@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>for 문</title>
+ </head>
+ <body>
+  <h2> for 문으로 10px ~ 35px 크기 출력 </h2>
+	<hr>
+	<script>
+		for(var size=10; size<=35; size+=5){
+			document.write("<span style=font-size:" + size + "px>");
+			document.write(size+"px </span>");		
+		}
+		document.write("<hr>");
+
+		var n = prompt("0보다 큰 정수를 입력하세요.",0);
+		n = parseInt(n);
+
+		var i = 0, sum = 0;
+		while(i<=n){
+			sum+=i;
+			i++;
+		}
+		document.write("0에서 " + n + "까지 합은 " + sum);
+	</script>
+ </body>
+</html>

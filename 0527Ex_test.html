@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		h2{text-align:center;}
+		div#ibb{display:inline-block; border:1px solid black;
+						width:200px; height:100px;}
+		div#ib{display:inline-block; border:1px solid black;}
+		div#foot{position:fixed; background:lightgreen; bottom: 430px;}
+		ul>li#litype:hover{background:pink;}
+		li#litype{list-style-type:square;}
+		img#mio{position:absolute; z-index:-3; width:950px; height:90px;}
+		img#sponge{float:left; width:200px;}
+		@keyframes bing{0%{transform:rotate(360deg);}
+		}
+		img#spongebing{animation-name:bing; animation-duration:1s;
+									animation-iteration-count:infinite; width:200px;}
+	</style>
+
+ </head>
+ <body>
+   <h2>3개의 div 활용</h2>
+	<hr>
+		<div id='ibb'>캔버스에 이미지를 그리기 위해서는 이미지를 담을 객체가 먼저 필요하다.	</div>
+		<div id='ibb'>image 객체의 src 프로퍼티를 이용하여 비트맵을 로드한다.	</div>
+		<div id='ibb'>이미지 로딩이 끝나면 그때 비로소 이미지의 너비와 높이가 제대로 알려진다.	</div>
+	<hr>
+  <h2>3개의 div 활용</h2>
+	<hr>
+		<div id='ib'>캔버스에 이미지를 그리기 위해서는 이미지를 담을 객체가 먼저 필요하다.	</div>
+		<div id='ib'>image 객체의 src 프로퍼티를 이용하여 비트맵을 로드한다.	</div>
+		<div id='ib'>이미지 로딩이 끝나면 그때 비로소 이미지의 너비와 높이가 제대로 알려진다.	</div>
+	<hr>
+  <h2>소연재</h2>
+	<hr>
+	<p>저는 체조 선수 소연재입니다. 음악을 들으면서 책일기를 좋아합니다. 김치찌개와 막구수 무척 좋아합니다.	</p><br><br>
+	<div id='foot'>소연재 공연은 24일 입니다.</div>
+	<hr>
+  <h2>가보고 싶은 나라</h2>
+	<hr>
+		<ul>
+			<li id='litype'>프랑스
+			<li id='litype'>독일
+			<li id='litype'>칠레
+			<li id='litype'>남아프리카공화국
+		</ul>
+	<hr>
+	<h2>가보고 싶은 나라</h2>
+	<hr>
+	<div>
+		<img src='../../images/mio.png' id='mio'>
+		<ul>
+			<li id='litype'>프랑스
+			<li id='litype'>독일
+			<li id='litype'>칠레
+			<li id='litype'>남아프리카공화국
+		</ul>
+	</div>
+	<hr>
+	<h2>스폰지밥</h2>
+	<hr>
+	<img src='../../images/spongebob.png' id='sponge'>
+	<p>저는 스폰지밥입니다.<br>먹는 밥이 아니고요...제 이름이 그냥 그래요.<br>
+	그리고 어린이부터 노인까지 많은 분들의 사랑을 받고 있어요.<br>
+	제 친구 뚱이도 있고 징징이도 있고 집게 사장님도 있어요.</p><br><br><br><br><br>
+	<hr>
+	<h2>빙글빙글 스폰지밥</h2>
+	<hr>
+	<img src='../../images/spongebob.png' id='spongebing'>
+ </body>
+</html>

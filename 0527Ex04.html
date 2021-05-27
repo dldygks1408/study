@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>비트 연산</title>
+	<script>
+		function digit8(v) {
+			var str="";
+			for(i=0; i<8; i++, v<<=1){
+				if((v & 0x80)) str += "1";
+				else str += "0";
+			}
+			return str;
+		}
+	</script>
+ </head>
+ <body>
+	<h3>비트 논리 연산과 시프트 연산</h3>
+	<hr>
+	<script>
+		var x = 10, y = 3;
+		document.write("<pre>");
+		document.write("x = " + x + " , y  = " + y + "<br>");
+		document.write("x : " + digit8(x) + "<br>");
+		document.write("x : 		" + digit8(x) + "<br>"); 
+		document.write("y : 		" + digit8(y) + "<br>"); 
+		document.write("<hr>");
+		document.write("x & y  : 	" + digit8(x&y) + "<br>");
+		document.write("x | y  : 	" + digit8(x|y) + "<br>");
+		document.write("x ^ y  : 	" + digit8(x^y) + "<br>");
+		document.write("~x     : 	" + digit8(~x) + "<br>");
+		document.write("<hr>");
+		document.write("x << 1 : 	" + digit8(x<<1) + " (" + (x<<1) + ")<br>");
+		document.write("x >> 1 : 	" + digit8(x>>1) + " (" + (x>>1) + ")<br>");
+		document.write("x >>> 1:   	" + digit8(x>>>1) + " (" + (x>>>1) + ")");
+		document.write("</pre>");
+		document.write("<hr>");
+
+		var price = 0;
+		var coffee = prompt('무슨 커피 드릴까요 ? ','');
+		switch(coffee){
+			case "espresso":
+			case "에스프레소" : price = '2,000';
+				break;
+			case "카푸치노" : price = '3,000';
+				break;
+			case "카페라떼" : price = '3,500';
+				break;
+			default:
+				document.write(coffee + "는 없습니다.");
+		}
+		if(price != 0)
+			document.write(coffee + "는 " + price + "원 입니다.");
+		
+
+	</script>
+  
+ </body>
+</html>
