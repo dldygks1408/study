@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+	<script>
+		var ppp;
+		function init(){
+			ppp = document.getElementById('ppp');
+			ppp.onmouseover= over;
+			ppp.onmouseout = out;
+		}
+		function over(){
+			ppp.style.backgroundColor='lightgray';
+		}
+		function out(){
+			ppp.style.backgroundColor='white';
+		}
+		function query(){
+			var ret = confirm('네이버로 이동하시겠습니까?');
+			return ret;
+		}
+		function noAction(e){
+			e.preventDefault();
+		}
+	</script>
+ </head>
+ <body onload="init()">
+  <h2>HTML 태그에 리스너 작성</h2>
+	<hr>
+	<p onmouseover="this.style.backgroundColor='orchid'"
+		onmouseout="this.style.backgroundColor='white'">
+		마우스 올리면 orchid 색으로 변경
+	</p>
+
+	<h2>DOM 객체의 이벤트 리스너 프로퍼티에 함수 등록</h2>
+	<hr>
+	<p id='ppp'>마우스 올리면 lightgray 색으로 변경</p>
+	<hr>
+	<h2>이벤트 객체 전달받기 </h2>
+	<p id = 'p'>마우스를 올려보세요.</p>
+	<button onclick='f(event)'>클릭하세요.</button>
+	<script>
+		function f(e) {
+			alert(e.type)
+		}
+	document.getElementById('p').onmouseover = f;
+	</script>
+
+	<hr>
+	<h2>이벤트의 디폴트 행동 취소</h2>
+	<hr>
+	<a href='https://www.naver.com' onclick='return query()'>네이버로 이동할지 물어보는 링크</a>
+	<hr>
+	<form>
+		<input type='checkbox'>빵<br>
+		<input type='checkbox' onclick='noAction(event)'>술
+	</form>
+ </body>
+</html>

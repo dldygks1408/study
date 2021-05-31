@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<script>
+		function change(){
+			var hr = document.getElementById('myol');
+			hr.style.backgroundColor='#ffccff';
+		}
+		function showborder(){
+			var span1 = document.getElementById('showspan');
+			span1.style.border='1px solid black';
+		}
+		function showdel(){
+			var span2 = document.getElementById('showspan');
+			span2.style.border='1px solid #ffffff';
+		}
+		function showalert(){
+			var p = document.getElementById("pcount");
+			p = "p 태그의 개수는 ? \n\n" + p.childElementCount + "개 입니다.\n";
+			alert(p);
+		}
+		function spanOk(){
+			var span3 = document.getElementsByClassName('dellll');
+			for(var i = 0; i<span3.length; i++){
+			var span3 = span3[i];
+			span3.style.color = '#000000';
+			}
+		}
+		function spanNo(){
+			var span3 = document.getElementById('dellll');
+			span3.style.color = '#ffffff';
+		}
+
+	</script>
+	<style>
+		span.dellll{color:white;}
+	</style>
+ </head>
+ <body>
+	<h2>라면 끓이는 순서</h2>
+  <hr>
+	<ol type='A' id='myol' onclick='change()'>
+		<li> 물을 끓인다. 
+		<li> 라면과 스프를 넣는다.
+		<li> 파를 썰어 넣는다.
+		<li> 5분 후 맛있게 먹는다.
+	</ol>
+	<hr>
+	<h2>자바스크립트란?　
+	<button onclick='showborder()'>border 버튼</button>　
+	<button onclick='showdel()'>border 삭제</button>　
+	<button onclick='showalert()'>p 버튼</button>
+	</h2>
+	<hr>
+	<div id='pcount'>
+	<p>자바스크립트는 웹 프로그래밍 언어로서 웹 페이지를 동적 변경시킬 수 있다.</p>
+	<p><span id = 'showspan'>C언어</span>를 아는 사용자는 빠르게 학습 할 수 있다.</p>
+	<p>이벤트 등 GUI 프로그래밍에 필요한 요소들이 있어 학습에 약간의 어려움이 있다.</p>
+	</div>
+	<hr>
+	<h2>다음 빈 곳에 숨은 단어는 ? </h2>
+	<hr>
+	<p>1 2 3 (<span class ='dellll'>4</span>) 5 6 (<span class ='dellll'>7</span>) 8 9 (<span class ='dellll'>10</span>)<p>
+	<button onclick='spanOk()'>정답</button>	<button onclick='spanNo()'>숨기기</button>
+ </body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>document.getElementsByTagName()</title>
+	<style>
+		#divoncl{background:lightblue;}
+	</style>
+	<script>
+		function change(){
+			var spanArray = document.getElementsByTagName('span');
+			for(var i = 0; i<spanArray.length; i++){
+				var span = spanArray[i];
+				span.style.color = 'orchid';
+				span.style.fontSize = '20px';
+				console.log(i+' = '+span.textContent + '\n');
+			}		
+		}
+
+		var win = null;
+		function showHTML(){
+			if(win == null || win.closed){
+				win = window.open("","outWin","width=300, height=200");
+			}
+			var textArea = document.getElementById('srcText');
+			win.document.open();
+			win.document.write(textArea.value);
+			win.document.close();
+		}
+	</script>
+ 
+ </head>
+ <body>
+  <h3>내가 좋아하는 과일 <button onclick='change()'>누르세요</button></h3>
+	<hr>
+	<p>
+		저는 빨간 <span>사과</span>를 좋아해서 아침마다 한 개씩 먹고 있어요.
+		운동할 때는 중간 중간에 <span>바나나</span>를 먹지요.
+		탄수화물 섭취가 빨라 힘이 납니다.
+		또한 달콤한 향기를 품은 <span>체리</span>와
+		여름 냄새 물씬 나는 <span>자두</span>를 좋아합니다.
+	</p> 
+	<hr>
+	<h3>write()와 writeln() 차이</h3>
+	<hr>
+	<script>
+		document.write('<h3>동물원에 송풍갑시다</h3>');
+		document.write('<p style="color:blue">날씨가 좋아 소풍갑니다.</p>');
+		document.write(2+3);
+		document.write('명입니다.<br>');
+		document.write('<hr>');
+		document.writeln(5)
+		document.writeln('명입니다.<br>');
+	</script>
+	<hr>
+	<div onclick='document.write("<h3>클릭</h3>")' id='divoncl'>
+		<p>색칠한 부분 아무 곳이나 클릭하세요.	</p>
+	</div>
+	<hr>
+	<h3>HTML 문서 작성기 만들기</h3>
+	<hr>
+	<p>아래에 HTML 문서를 작성하고 버튼을 클릭해 보세요. 새 윈도우에 HTML 문서가 출력됩니다.	</p>
+	<textarea id='srcText' rows='10' cols='50'></textarea>
+	<br><br>
+	<button onclick='showHTML()'>HTML 문서 출력하기</button>
+ </body>
+</html>

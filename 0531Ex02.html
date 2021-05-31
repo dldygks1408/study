@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>CSS 스타일 동적 변경</title>
+	<script>
+		function change(){
+			var span = document.getElementById('mySpan');
+			span.style.color = 'green';
+			span.style.fontSize = '30px';
+			span.style.display = 'block';
+			span.style.width= '6em';
+			span.style.border = '3px dotted magenta';
+			span.style.margin = '20px';
+			alert(span.style.getPropertyValue('color'));
+		}
+		function change1(){
+			var p = document.getElementById('firstP1');
+			p.innerHTML = '나의 <img src="../../images/jajang.png"> 이미지';
+			/*alert(p.textContent+'\n'+p.innerHTML);*/
+			d.textContent='이미지 보셨나요?';
+		}
+		function change2(obj,size,color){
+			obj.style.color = color;
+			obj.style.fontSize = size;
+		}
+	</script>
+ </head>
+ <body>
+	<h3>CSS 스타일 동적 변경</h3>
+	<hr>
+	<p style='color:blue'> 이것은
+		<span id = 'mySpan' style='colorLred'>문장입니다.</span>
+	</p>
+	<input type='button' value='스타일변경' onclick='change()'>  
+	<hr>
+
+	<h3>innerHTML 활용 : 아래 글자를 클릭하면 이미지가 나옵니다.</h3>
+	<hr>
+	<p id='firstP1' style='color:blue' onclick='change1()'>
+		여기 <span style='color:red'>클릭하세요.</span>
+	</p>
+	<div id='d'> </div>
+	<hr>
+	<h3>this 활용</h3>
+	<hr>
+	<button onclick="change2(this.'30px','red')">버튼</button>
+	<button onclick="change2(this.'30px','blue')">버튼</button>
+	<div onclick="change2(this,'25px','orange')">
+	여기 클릭하면 크기와 색 변경
+	</div>
+	<hr>
+ </body>
+</html>
