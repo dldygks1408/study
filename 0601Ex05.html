@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>선택된 라디오 버튼 알아내기</title>
+	<script>
+		function findChecked(){
+			var found = null;
+			var kcity = document.getElementsByName('city');
+			for(var i=0; i<kcity.length; i++){
+				if(kcity[i].checked == true){
+					found = kcity[i];
+				}
+			}
+			if(found != null){
+				alert(found.value + "이 선택되었음");
+			}
+			else{
+				alert("선택된 것이 없음");
+			}
+		}
+		var sum=0;
+		function calc(cBox){
+			if(cBox.checked){
+				sum+=parseInt(cBox.value);
+			}
+			else{
+				sum-=parseInt(cBox.value);
+			}
+			document.getElementById('sumtext').value = sum;
+		}
+		function drawImage(){
+			var sel = document.getElementById('fruits');
+			var img = document.getElementById('fruitimage');
+			img.src = sel.options[sel.selectedIndex].value;
+		}
+		function whatKeyDown(e){
+			var str = '';
+			var div = document.getElementById('div');
+			div.innerHTML = '';
+			str += 'e.key = ' + e.key + '<br>';
+			str += 'e.code = ' + e.code + '<br>';
+			div.innerHTML = str;
+		}
+	</script>
+ </head>
+ <body onload='drawImage()'>
+  <h3>버튼을 클릭하면 선택된 라디오 버튼의 value를 출력합니다.</h3>
+	<hr>
+	<form>
+		<input type='radio' name='city' value='seoul' checked>서울
+		<input type='radio' name='city' value='busan'>부산
+		<input type='radio' name='city' value='chunchen'>춘천
+		<input type='button' value='find checked' onclick='findChecked()'>
+	</form>
+	<br><br><h3>물품을 선택하면 금액이 자동 계산됩니다.</h3>
+	<hr>
+	<form>
+		<input type='checkbox' name = 'hap' value='10000' onclick='calc(this)'>모자 1만원
+		<input type='checkbox' name ='shose' value='30000' onclick='calc(this)'>구두 3만원
+		<input type='checkbox' name = 'bag' value='80000' onclick='calc(this)'>가방 8만원
+		<br>
+		지불하실 금액 <input type = 'text' id='sumtext' value='0'>
+	</form>
+	<br><br>
+	<h3>select 객체에서 선택한 과일 출력</h3>
+	<hr>
+	과일을 선택하면 이미지가 출력됩니다.
+	<form>
+		<select id='fruits' onchange='drawImage()'>
+			<option value='../../images/apple.png'>사과
+			<option value='../../images/mango.png'>망고
+			<option value='../../images/banana.png'>바나나
+		</select>
+		<img id= 'fruitimage' src='../../images/apple.png' alt=''>
+	</form>
+	<br><br>
+	<h3>키 리스너와 키 이벤트 객체의 프로퍼티</h3>
+	<hr>
+	텍스트 창에 키를 눌러보세요.<br>-Alt, Shift, Ctrl 키도 가능합니다.<br>
+	<input type='text' id='text' onkeydown='whatKeyDown(event)'><br>
+	<div id='div' style='background-color:skyblue; width:250px; height:50px'>
+	</div>
+ </body>
+</html>
