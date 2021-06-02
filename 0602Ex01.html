@@ -2,36 +2,23 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>스크린 장치에 관한 정보 출력</title>
+  <title>Document</title>
+	<script src = '../jquery_workspace/js/jquery-1.9.1.min.js'></script>
 	<script>
-		function printScreen(){
-			var text = 'availHeight:'.fontcolor('blue') + screen.availHeight + '<br>';
-					text += 'availWidth:'.fontcolor('blue') + screen.availWidth + '<br>';
-					text += 'colorDepth:'.fontcolor('blue') + screen.colorDepth + '<br>';
-					text += 'pixelDepth:'.fontcolor('blue') + screen.pixelDepth + '<br>';
-					text += 'height:'.fontcolor('blue') + screen.height + '<br>';
-					text += 'Width:'.fontcolor('blue') + screen.width+ '<br>';
-			document.getElementById('div').innerHTML = text;
+		function showMe(){
+			$('.img1').show();
+		}
+		function hideMe(){
+			$('img').hide();
 		}
 	</script>
  </head>
- <body onload = 'printScreen()'>
-  <h3>스크린 장치에 관한 정보</h3>
-	<hr>
-	<div id = 'div'></div>
-	<br><br>
-	<h3>history 객체 활용</h3>
-	<hr>
-	<button onclick='history.back()'> back()</button>
-	<button onclick='history.forward()'> forward()</button>
-	<button onclick='history.go(-1)'> history.go(-1)</button>
-	<br>
-	<ul>
-		<li>history.back();			이전 페이지로 이동
-		<li>history.forward();	다음 페이지로 이동 
-		<li>history.go(-1);			이전 페이지로 이동
-		<li>history.go(1);			다음 페이지로 이동
-	</ul>
-	<a href='https://www.naver.com'>네이버</a>
+ <body>
+  <h2>jQuery 맛보기</h2>
+	<form>
+		<input type='button' value='표시하기' onclick='showMe()'>
+		<input type='button' value='감추기' onclick='hideMe()'>
+	</form>
+	<img src='../jquery_workspace/images/icon1.jpg' class='img1'>
  </body>
 </html>

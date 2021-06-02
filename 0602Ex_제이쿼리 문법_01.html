@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<!-- 제이쿼리 라이브러리 연결 -->
+	<script src = '../jquery_workspace/js/jquery-1.9.1.min.js'></script>
+	<!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>-->
+
+	<!-- 자바스크립트 작성 -->
+	<script type='text/javascript'>
+		/* $(function(){}); 사용 가능 */ 
+		$(document).ready(function(){
+			$('*').css('font-size','13px');
+			$('h1').css('color','red');
+			$('firstTitle').css('color','green');
+			$('nextTitle').css('color','blue');
+			$('.Obj3>li').css('font-weight','bold');
+			$('.Obj3').children('.theObj1').css('color','purple');
+			$('.Obj5').parent().css('border','dashed 2px #0033ff');
+			$('#wrap h3').css('font-size','20px').css('background-color','yellow');
+			$('.Obj4').next().css('color','orange');//형
+			$('.Obj5').prev().css('text-align','right');//아우
+			$('.Obj6').siblings('li').css('text-align','center').css('color','red');
+			$(':text').css({'background-color':'#ffff33',
+											'border':'solid 3px #ff0066', 'color':'green'});
+		
+		});
+	</script>
+ </head>
+	<body>
+		<div id="wrap">
+		<h1>제이쿼리</h1>
+		<h2 id="firstTitle">선택자</h2>
+		<h3 class="nextTitle">부모 요소</h3>
+		<div>
+		<p class="Obj1">현재 id가 obj1인 요소를 기준으로, 부모 요소는 div요소입니다.	</p>
+		</div>
+		<h3>자식 요소 선택자</h3>
+			<ul class="Obj3">
+				<li>리스트1</li>
+				<li class="theObj1">리스트2</li>
+				<li>리스트3</li>
+			</ul>
+		<h3>형 요소 선택자</h3>
+			<ul>
+				<li>리스트4</li>
+				<li class="Obj4">리스트5</li>
+				<li>리스트6</li>
+			</ul>
+		<h3>동생 요소 선택자</h3>
+			<ul>
+				<li>리스트7</li>
+				<li class="Obj5">리스트8</li>
+				<li>리스트9</li>
+			</ul>
+		<h3>형제 요소 선택자</h3>
+			<ul>
+				<li>리스트10</li>
+				<li class="Obj6">리스트11</li>
+				<li>리스트12</li>
+			</ul>
+		<h3>입력 요소 선택자</h3>
+		<p><label for="user_name">이름</label>
+		<input type="text" name="user_name" id="user_name"></p>
+		</div>
+	</body>
+</html>
+
+<!-- 
+/* 탐색 선택자(인덱스: 0부터 시작)
+$('ul li:odd') : <ul>의 <li>요소 중 홀 수 인덱스 요소만 선택
+$('ul li:even') : <ul>의 <li>요소 중 짝수 인덱스 요소만 선택
+$('ul li:first') : <ul>의 <li>요소 중 첫번째 요소만 선택
+$('ul li:last') : <ul>의 <li>요소 중 마지막 요소만 선택
+$('ul li:eq(1)') 또는 $('ul li').eq(1) : <ul>의 <li>요소 중 두번째 요소만 선택(인덱스 0
+$('ul li:lt(2)') : <ul>의 <li>요소 중 3번째 이전 요소 선택(less than)<
+$('ul li:gt(2)') :<ul>의 <li>요소 중 3번째 이후 요소 선택(grate than)>
+$('ul li:nth-child(2n)') : <ul>의 <li>요소 2의 배수번째 요소 선택(예. 2,4,6,8....)
+$("ul li:contains('문자')") : <ul>의 <li>요소 중 '문자'가 포함된 요소 선택
+$('ul li:has('span')') : <ul>의 <li>요소 중 'span'태그를 가지고 있는 요소 선택
+$('ul li:filter('.theObj')') : <ul>의 <li>요소 중 '.theObj'클래스인 요소 선택
+$('ul li:find('a')') : <ul>의 <li>요소 중 포함하는 <a> 요소만 선택
+$('ul li:visible') : <ul>의 <li>요소 중 보이는 요소만 선택
+$('ul li:hidden') : <ul>의 <li>요소 중 감춰진 요소만 선택
+$('h1,h2,h3') : h1,h2 요소들만 선택
+$('ul li').not(:empty) : <ul>의 <li>요소 중 내용을 가진 요만 선택(비어 있지 않은요소)
+*/
+​
+/*문서 객체 조작 메서드
+: 문서 객체의 생성, 복제, 추가, 삭제, 속성에 대한 변경, 삭제 할 때 사용
+선택자 내용
+1. $('선택요소').html() : 선택한 요소의 하위 요소들을 반환
+2. $('선택요소').html('새요소'):선택한 요소의 하위 요소들을 새 요소들로 변경/ 자바스크립트:innerHTML
+3. $('선택요소').text('텍스트') :선택한 요소의 텍스트를 새 텍스트로 변경/ 자바스크립트:textContent
+4. $('새요소') :새 요소를 생성
+5. $('선택요소').append('새요소'):선택 요소의 마지막 자식요소로 새요소를 추가
+6. $('선택요소').prepend('새요소'):선택 요소의 첫 자식 요소로 새 요소를 삽입
+7. $('새요소').appendTo('요소선택'):선택요소의 마지막 자식요소로 새요소를 추가
+8. $('새요소').prependTo('요소선택'):선택 요소의 첫 자식 요소로 새 요소를 삽입
+9. $('새요소').insertBefore('요소선택'):선택요소 이전 위치에 형제요소로 새 요소를 추가
+10. $('새요소').insertAfter('요소선택'): 선택요소 다음 위치에 형제요소로 새 요소를 추가
+11. $('선택요소').clone(true/false) : 선택요소를 복사(true)이면 하위요소 포함해 복사
+12. $('선택요소').remove() : 선택 요소를 삭제
+13. $('선택요소').empty() : 선택 요소의 하위 요소들 모두 삭제
+14. $('선택요소').attr('속성') : 선택 요소의 특정 속성을 얻어오기
+15. $('선택요소').attr('속성','값') : 선택 요소의 지정한 속성을 새 값으로 변경
+16. $('선택요소').addClass('클래스명') : 선택요소의 새 클래스명을 부여
+17. $('선택요소').removeClass('클래스명'): 선택요소에 지정된 클래스명을 삭제
+18. $('선택요소').toggleClass('클래스명') : 선택요소에 클래스명이 없으면 추가 있으면 삭제
+19. $('선택요소').hasClass('클래스명'):선택요소에 클래스명이 있으면 true를 반환
+20. $('선택요소').wrap('<div></div>') :선택요소를 <div></div>요소로 감쌈
+21. $('선택요소').wrapAll('<div></div>'):선택요소 전체를 <div></div>요소가 한번에 둘러쌈.
+*/
