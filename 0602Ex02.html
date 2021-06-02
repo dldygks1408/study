@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<script>
+		function draw_m(){
+			var m_canvas = document.getElementById("m");
+			var m_ctx = m_canvas.getContext("2d");
+			m_ctx.fillStyle='rgb(200,0,0)';
+			m_ctx.fillRect(10,10,100,100);			
+
+			m_ctx.fillStyle='rgba(0,0,200,0.5)';
+			m_ctx.fillRect(50,50,100,100);
+
+			m_ctx.clearRect(60,60,40,40);
+
+			m_ctx.strokeRect(150,50,70,150);
+
+		  m_ctx.fillStyle = "rgb(200,0,0)"; 
+			 m_ctx.fillRect (150, 150, 150, 150); 
+			 m_ctx.fillStyle = "rgb(0,0,200)"; 
+			 m_ctx.fillRect (300, 150, 150, 150); 
+			 m_ctx.fillStyle = "rgb(0,200,0)"; 
+			 m_ctx.fillRect (210, 0, 200, 150); 
+			 m_ctx.fillStyle = "yellow"; 
+			 m_ctx.fillRect (150, 330, 150, 150); 
+			 m_ctx.globalAlpha=0.4;
+			 m_ctx.beginPath();
+			 m_ctx.arc(210,210,100,0,Math.PI*2,true);
+			 m_ctx.fillStyle="white";
+			 m_ctx.fill();
+			 m_ctx.beginPath();
+			 m_ctx.arc(210,210,60,0,Math.PI*2,true);
+			 m_ctx.fillStyle="blue";
+			 m_ctx.fill();  
+		}
+	</script>
+ </head>
+ <body onload='draw_m()'>
+	<canvas id='m' width='500' height='300'></canvas>
+  
+ </body>
+</html>

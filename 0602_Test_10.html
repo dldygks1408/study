@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+    <script>
+        function opennn(){
+            var n = window.open("","","width=200,height=200")
+            n.document.write("감사합니다.");
+            n.document.title="감사";
+						n.document.body.style.background = '#ffffcc';
+        }
+				function load() {
+					var select = document.getElementById("site");
+					var win = window.open("","","width=300,height=300");
+					win.location=select.options[select.selectedIndex].value;
+				}
+		</script>
+ </head>
+ <body onload='opennn()'>
+  <h3>HTML</h3>
+	<hr>
+	<p>HTML5를 학습하는 사이트입니다. 여기서 HTML5, CSS3, 자바스크립트를 배울 수 있습니다.</p>
+	<br><br>
+	<h3>옵션 선택으로 사이트 접속</h3>
+	<hr>
+	<h4>접속할 사이트</h4>
+	<form>
+		<select id='site' onclick='load()' value='3'>
+			<option value="http://www.naver.com" selected>네이버
+			<option value="http://www.google.com">구글
+			<option value="http://www.microsoft.com">마이크로소프트
+		</select>
+	</form>
+ </body>
+</html>
