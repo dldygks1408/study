@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style type='text/css'>
+		*{margin:0;padding:0;}
+		li{list-style:none;}
+		body{font:12px/1.5 "굴림",gulim; margin:10px;}
+		h2{margin-top:30px;}
+		a{color:red;}
+		#textZone{width:300px;}
+		#listWrap{background:#ff66ff; width:110px; padding:10px;}
+		.list1{display:none;}
+	</style>
+	<script src = '../jquery_workspace/js/jquery-1.7.2.min.js'></script>
+
+	<script type='text/javascript'>
+		$(document).ready(function(){
+			//btn1를 클릭하면 textZone에 글자색을 변경
+			$('#btn1').click(function(){
+				$('#textZone').css('color','blue').css('background','yellow');
+			});
+
+			//btn7를 클릭하면 textZone에 글자색을 기본으로 변경
+			$('#btn7').click(function(){
+				$('#textZone').css('color','black').css('background','white').
+				css('font-size','12px');
+			});
+
+			//btn5를 클릭하면 textZone을 숨김
+			$('#btn5').click(function(){
+				$('#textZone').hide(1000,'linear');
+			});
+
+			//btn6를 클릭하면 textZone을 숨김
+			$('#btn6').click(function(){
+				$('#textZone').show(1000,'linear');
+			});
+
+			//btn8 클릭하면 왔다리갔다리이
+			$('#btn8').click(function(){
+        $('#textZone').hide(1000,'linear',function(){
+          $(this).show(1000);
+        });
+      });
+
+			//btn2에 마우스 올려지면 textZone에 배경색을 변경
+			$('#btn2').mouseover(function(){
+				$('#textZone').css('background','yellow');
+			});
+
+			//btn2에 포커스를 얻었을 때 textZone에 배경색을 변경(tab으로 이동했을때 )
+			$('#btn2').focus(function(){
+				$('#textZone').css('background','skyblue');
+			});
+
+			//bind이벤트 btn에 mouseover/ focus 이벤트 발생___체이닝 방법
+			$('#btn3').bind('mouseover focus',function(){
+			//.css(~~).css(~~) 
+			$('#textZone').css('color','green').css('font-weight','bold');
+			});
+
+			//bind이벤트에 각각의 이벤트마다 틀리게 이벤트 적용__맵방식 사용 
+			//형식: bind({ 이벤트명:function(){},이벤트명:function(){} });
+			$('#btn3').bind({'mouseover':function(){
+				$('#textZone').css('color','green').css('font-weight','bold');
+			},'focus':function(){
+				$('#textZone').css('background','navy').css('font-size','30px');
+			}});
+
+			//listWrap에 마우스가 들어가면 block,빠져나가면 none
+			$('#listWrap').mouseenter(function(){
+				$('.list1').css('display','block');
+			});
+			$('#listWrap').mouseleave(function(){
+				$('.list1').css('display','none');
+			});
+
+			//toggle이벤트:클릭할 때 마다 함수들을 차례차례 적용시킴
+			$('#btn4').toggle(function(){	//this 객체 자신==선택요소
+				$(this).next().css('background','red');
+				},function(){
+				$(this).next().css('background','orange');
+				},function(){
+				$(this).next().css('background','yellow');
+				},function(){
+				$(this).next().css('background','white');}
+			);
+
+			// hover이벤트 : 마우스가 선택요소의 영역에 오버되거나
+			// 벗어나면 실행
+			$('.hover').hover(function(){ //커서가 선택요소에 들어오면
+				$(this).css('color','green');
+			},function(){
+				$(this).css('color','blue'); //커서가 선택요소에서 빠져나가면
+			});
+		});
+
+	</script>
+ </head>
+	<body>
+		<div id="wrap"> 
+		<h1>이벤트 연습 </h1>
+			<p id="textZone">웹 브라우저에서 버튼을 클릭한다거나 mouse를 움직이거나 
+			하는 모든 행위를 이벤트라고 합니다. 그리고 이벤트발생시 함수의 실행문이 
+			수행되도록 이벤트를 지정하는 것을 이벤트 핸들러라고 합니다.
+			</p>
+		<h2>Click메서드 </h2>
+			<p><button id="btn1">textZone 바꾸기</button>
+				<button id="btn7">textZone 되돌리기</button>
+				<button id="btn5">textZone 숨기기</button>
+				<button id="btn6">textZone 나와라</button>
+				<button id="btn8">textZone 왔다갔다</button></p>
+		<h2>Mouseover 메서드 </h2>
+			<p><button id="btn2">Mouseover</button> </p>
+		<h2>bind 메서드 </h2>
+			<p><button id="btn3">bind</button> </p>
+		<h2>Mouseleave 메서드 </h2>
+		<div id="listWrap">
+		<h3>관련 사이트 </h3>
+			<ul class="list1">
+				<li><a href="#">list1</a></li>
+				<li><a href="#">list2</a></li>
+				<li><a href="#">list3</a></li>
+				<li><a href="#">list4</a></li>
+			</ul>
+		</div>
+		<h2>toggle 메서드</h2>
+			<button id="btn4">toggle</button>
+			<p>누를 때마다 실행함수를 차레대로 번갈아 가면서 실행합니다. 
+			<br/>위의 toggle 버튼을 계속 클릭해 보세요.
+		</p>
+		<h2>hover 메서드</h2>
+		<h3><a href="#" class="hover">hover</a></h3>
+		</div>
+	</body>
+</html>
+
+<!-- 
+이벤트(Event) : 웹 브라우저내에서 일어나는 버튼 클릭,마우스 움직임, 키보드 동작 등의 모든 행동을 이벤트라 함.
+이벤트 내용
+1. click() : 선택요소를 클릭했을 때 발생
+2. dblclick() : 이벤트 대상에 더블클릭했을 때 발생
+3. mouseover() : 마우스를 이벤트 대상에 올려놓았을 때 발생
+4. mouseout() : 마우스가 이벤트 대상에서 벗어났을 때 발생
+5. focus() : 이벤트 대상에 포커스가 생겼을 때 발생(tab키를 눌렀을때)
+6. blur() : 이벤트 대상에 포커스를 잃었을 때 발생
+7. focusin() : 키보드, tab키, text에서
+(이벤트 대상에 포함된 input요소에 포커스를 얻었을때 발생)
+8. focusout() : 키보드, tab키, text에서
+이벤트 대상에 포함된 input요소에 포커스를 잃었을때 발생
+9. keydown() : 키를 눌렀을 때 발생
+10. keypress() : 키를 눌렀을 때 발생
+11. mouseenter() : 마우스가 선택 요소내로 들어오면 발생
+12. mouseleave() : 마우스가 선택 요소 밖으로 나갈때 발생
+13. mousemove() : 마우스가 움직일 때마다 발생
+14. resize() : 윈도우 창에 사이즈를 조정할 때마다 발생
+15. submit() : 양식(form)에서 전송 버튼을 누를 때 발생
+16. reset() : 양식(form)에서 취소 버튼을 누를 때 발생
+17. toggle() : 클릭 할 때마다 순차적으로 함수를 번갈아가면서 실행
+18. hover() : 마우스를 올렸을 때와 마우스가 벗어났을 때 각각의 함수를 실행
+19. unload() : 문서를 종료했을 때 실행<-- >onload()
+20. change() : 값이 바뀌고 포커스가 옮겨졌을 때 실행
+21. bind() : 여러 개의 이벤트를 적용시 사용
+이벤트 형식 :
+$('선택요소').이벤트명(function(){실행할 문장;});
+-->

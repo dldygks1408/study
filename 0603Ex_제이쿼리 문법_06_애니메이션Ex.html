@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style type = 'text/css'>
+		
+	</style>
+	<script src='../jquery_workspace/js/jquery-1.9.1.min.js'>	</script>
+
+	<script type='text/javascript'>
+		$(document).ready(function(){
+			$('#move').on('click',function(){
+				$('img').animate({left:'200px'});
+		});
+
+		$('#moveBack').on('click', function(){
+			$('img').animate( {left:''}, 1000 );
+		});
+
+		$('#multiAni').on('click', function(){
+			$('img').animate( {left:'+=50px', opacity:'0.4', width:'+=50px', height:'-=50px'}, 3000 );
+		});
+
+		$('#sequential').on('click', function(){
+			$('img').animate( {left:'+=30px'}, 1000 ); 
+			$('img').animate( {opacity:'0.4'}, 1000 ); 
+			$('img').animate( {width:'+=50px'}, 1000 ); 
+			$('img').animate( {height:'-=50px'}, 1000 ); 
+		});
+
+		$('#reset').on('click', function(){
+			$('img').animate( {left:'', opacity:'1.0', width:'200px', height:'200px'}, 3000 );
+		});
+
+		$('#stop').on('click', function(){
+			$('img').stop();
+		});
+		
+		$('#right').on('click', function(){
+			$('img').stop().animate({left:'+=100px'},500);
+		});
+
+		$('#left').click(function(){
+			$('img').stop().animate({left:'-=100px'},500);
+		});
+
+		$('#down').click(function(){
+			$('img').stop().animate({top:'+=100px'},500);
+		});
+
+		$('#up').click(function(){
+			$('img').stop().animate({top:'-=100px'},500);
+		});
+
+		});
+		
+	</script>
+ </head>
+ <body>
+	<p>
+		<button id='move'>move</button>
+		<button id='moveBack'>moveBack</button>
+		<button id='multiAni'>multiAni</button>
+		<button id='sequential'>sequential</button>
+		<button id='reset'>reset</button>
+		<button id='stop'>stop</button><br>
+		<button id='left'>left</button>
+		<button id='right'>right</button>
+		<button id='up'>up</button>
+		<button id='down'>down</button>
+	</p> 
+	<img src='../../html_workspace/images/spongebob.png' width='200'
+	style='position: relative;'>
+ </body>
+</html>

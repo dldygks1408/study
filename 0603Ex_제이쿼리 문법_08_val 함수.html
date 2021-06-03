@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style type = 'text/css'>
+		#console{margin:20px; font-size:30px; color:blue;}
+		button{width:100px; height:50px; font-size:20px;}
+	</style>
+	<script src='../jquery_workspace/js/jquery-1.9.1.min.js'>	</script>
+
+	<script type='text/javascript'>
+		$(document).ready(function(){
+
+			$('input').keyup(function(){
+				var value=$(this).val();
+				report(value);
+			});
+
+			$('#reset').click(function(){
+				$('input').val('val 메소드 호출중..');
+				$('input').keyup();	
+			});
+
+			function	report(msg){
+				$('#console').text(msg);
+			}
+
+		});
+	</script>
+ </head>
+ <body>
+	<button id='reset'>reset</button><br><br>
+	<input type="text" value='val 메소드 연습중 ...' size='100'>
+	<div id = 'console'>
+	</div>
+ </body>
+</html>

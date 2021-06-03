@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style type = 'text/css'>
+		div{width:100px; height:100px; border:1px solid #000;
+				cursor:pointer; margin:4px; float:left;}
+		.toggleStyle{background:blue; color:white;}
+	</style>
+	<script src='../jquery_workspace/js/jquery-1.9.1.min.js'>	</script>
+
+	<script type='text/javascript'>
+		$(document).ready(function(){
+			//this는 div가 class=toggleStyle를 갖고 있으면 실행
+			$('div').hover(function(){
+				if($(this).hasClass('toggleStyle')){
+					//div의 클래스 삭제
+					$(this).removeClass('toggleStyle');
+				}else{
+					//class = toggleStyle를 갖고 있지 않으면 실행
+					//클랙스를 추가해 주어서 파랑색 바탕 적용
+					$(this).addClass('toggleStyle');
+				}
+				});
+		});
+	</script>
+
+ </head>
+ <body>
+  <div>hasClass()는 선택된 엘리먼트에 해당 클래스가 </div>
+	<!--  class='toggleStyle' -->
+	<div>적용되어 있으면 true를 리턴하고	</div>
+	<div>아직 정용되어 있지 않으면 false를 리턴한다.	</div>
+ </body>
+</html>

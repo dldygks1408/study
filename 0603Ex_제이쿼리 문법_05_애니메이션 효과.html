@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style type = 'text/css'>
+		*{margin:0; padding:0;}
+		#box1{width:100px; height:100px; background:#f00;
+					position:relative; border-radius:50%;}
+	</style>
+	<!-- 애니메이션(Animation)
+	선택요소를 움직이거나 크기를 변형시킬 떄에는 애니메이션 효과를 적용합니다.
+	*콜백함수 : 애니메이션 효과의 진행이 끝난 후에 실행되는 함수, 생략 가능
+	형식)
+	$('선택요소').animate({애니메이션 속성},반응속도,콜백함수);
+	*반응속도 : slow, normal, fast, miliscond
+	*콜백함수 : 객체 상태의 변화(이벤트)가 발생했을 경우
+					이러한 사실을 함수를 통해 전달(키보드,마우스,Ajax) -->
+
+	<script src='../jquery_workspace/js/jquery-1.9.1.min.js'>	</script>
+	<script type='text/javascript'>
+
+		$(function (){
+			var cnt = 0;
+			var s=setInterval(function(){
+			cnt++;
+			if(cnt == 3){
+				clearInterval(s)
+				
+				$('#box1').animate({
+					//({이벤트속성},속도,콜백함수)
+					//속성: '값', 속성:'값'...n
+					left:'700px',	//오른쪽으로 1000px
+					width:'200px',	//오른쪽으로 가면서 상자크기가 200*200
+					height:'200px'
+				},3000).animate({ //왼쪽으로 0px 이동
+					left:'700px',			
+					width:'200px',
+					height:'200px',
+					bottom:'-700px'
+				},3000).animate({
+					left:'0px',			
+					width:'200px',
+					height:'200px',
+					bottom:'-700px'
+				},3000).animate({
+					left:'0px',			
+					width:'200px',
+					height:'200px',
+					top:'0px',
+					opacity:0.3
+				},3000);
+				}
+			});
+		});
+
+		
+	</script>
+ </head>
+ <body>
+	<div id=box1></div>  
+ </body>
+</html>

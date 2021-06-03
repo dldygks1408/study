@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style type = 'text/css'>
+		img{width:80px; height:80px; margin-left:50px;}
+	</style>
+	<script src='../jquery_workspace/js/jquery-1.9.1.min.js'>	</script>
+	<script type='text/javascript'>
+		$(document).ready(function(){
+			$('#sel').change(function(event){
+				var imgSrc=$(this).val();
+				console.log(event+'\n'+imgSrc);
+				$('#img').attr('src',imgSrc);
+				console.log('\n....'+$('#img').attr('src'));
+				}).change();
+		});
+	</script>
+ </head>
+ <body>
+	<table>
+		<tr>
+			<td>
+				<select id='sel'>
+					<option value="../jquery_workspace/images/strawberry.gif">딸기</option>
+					<option value="../jquery_workspace/images/apple.gif">사과
+					</option>
+					<option value="../jquery_workspace/images/banana.gif">바나나
+					</option>
+				</select>
+			</td>
+			<td><img id='img'></td>
+		</tr>
+	</table>
+ </body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style type='text/css'>
+		*{margin:0;padding:0;}
+		li{list-style:none;}
+		body{font:12px/1.5 "굴림",gulim; margin:10px;}
+		h2{margin-top:30px;}
+		a{color:red;}
+		#textZone{width:300px;}
+		#listWrap{background:#ff66ff; width:110px; padding:10px;}
+		.list1{display:none;}
+	</style>
+	<script src='../jquery_workspace/js/jquery-1.9.1.min.js'></script>
+	<script type='text/javascript'>
+		$(function(){
+			// id = btn1 인 버튼 클릭시 class = box1 요소를 숨김
+			$('#btn1').click(function(){
+				$('.box1').hide(1000)
+			});
+
+			// id = btn2 인 버튼 클릭시 class = box1 요소를 노출
+			$('#btn2').click(function(){
+				$('.box1').show(1000)
+			});
+
+			// toggle, 노출/숨김 번갈아 실행 slow, fast, normal, 1000분의1 = 1초
+			$('#btn3').click(function(){
+				$('.box2').toggle('fast');
+			});
+
+			$('#btn4').click(function(){
+				$(this).parent().next().slideUp(1000);
+			});
+
+			$('#btn5').click(function(){
+				$(this).parent().next().slideDown(1000);
+			});
+
+			$('#btn6').click(function(){
+				$(this).parent().next().slideToggle(1000);
+			});
+
+			$('#btn7').click(function(){
+				$(this).parent().next().fadeIn(1000);
+			});
+
+			$('#btn8').click(function(){
+				$(this).parent().next().fadeOut(1000);
+			});
+
+			$('#btn9').click(function(){
+				$(this).parent().next().fadeToggle(2000);
+			});
+
+			$('#btn10').click(function(){
+				$(this).parent().next().fadeTo(1000,0.1);
+			});
+			$('#btn11').click(function(){
+				$(this).parent().next().fadeTo(1000,1);
+			});
+		});
+	</script>
+ </head>
+ <body>
+	<div id="wrap">
+
+	<h1>제이쿼리 효과 주기</h1>
+	<p>제이쿼리에서는 화면전환, 슬라이드는 다운과 업	효과 등<br/>다양한 효과 메서드를 제공합니다.</p>
+
+	<h2>show/hide효과</h2>
+		<p><button id="btn1">hide</button>
+		<button id="btn2">show</button></p>
+		<p class="box1"> 선택요소를 숨기거나 노출하고 싶을 경우에 사용합니다.<br/>
+			hide(시간)/show(시간) 시간은 fast,slow,normal 등을 입력 
+			할 수 있으며, 1000분의 1초 단위 숫자로 표기할 수 있습니다.
+			선택요소를 숨기거나 노출하고 싶을 
+			경우에 사용합니다.<br/>
+			hide(시간)/show(시간) 시간은 fast,slow,normal 등을 입력 
+			할 수 있으며, 1000분의 1초 단위 숫자로 표기할 수 있습니다.
+			선택요소를 숨기거나 노출하고 싶을 
+			경우에 사용합니다.<br/>
+			hide(시간)/show(시간) 시간은 fast,slow,normal 등을 입력 
+			할 수 있으며, 1000분의 1초 단위 숫자로 표기할 수 있습니다.</p>
+
+	<h2>toggle효과 주기</h2>
+		<p><button id="btn3">toggle</button></p>
+		<p class="box2">선택요소가 숨겨져 있다면,보이게 하고<br/>
+		보이고 있다면 숨기는 역할을 합니다.</p>
+
+	<h2>slideup/Down효과 주기</h2>
+		<p><button id="btn4">slideUp</button>
+		<button id="btn5">slideDown</button>
+		<button id="btn6">slideToggle</button></p>
+		<p> slideUp은 선택요소가 위로 미끄러져 말아 올리면서 숨깁니다.<br/>
+		반면, slideDown은 선택 요소를 아래로 미끄러지듯 말아 내리면서 노출시킵니다.</p>
+
+	<h2>fadeIn/fadeOut 효과주기 </h2>
+		<p><button id="btn7">fadeIn</button>
+		<button id="btn8">fadeOut</button>
+		<button id="btn9">fadeToggle</button></p>
+		<p> fadeIn은 선택요소를 천천히 사라지게 만듭니다<br/>
+		fadeOut은 선택요소가 천천히 나타나게 합니다.</p>
+
+	<h2>fadeTo 효과주기 </h2>
+		<p><button id="btn10">fadeTo(0.3)</button>
+		<button id="btn11">fadeTo(1)</button></p>
+		<p id="box3"> fadeTo 선택요소를 원하는 만큼만 <br/>
+		보일수 있습니다.</p>
+	</div>
+ </body>
+</html>
+<!-- 화면 전환효과(Effect)
+선택요소를 숨기거나 노출할 때 다양한 효과를 줄 수 있으며,
+이러한 요소들로 인해 다이나믹하고 인터렉티브한 제작이 가능.
+
+효과 메소드 내용
+1. $('선택요소').hide() : 선택요소가 숨김
+2. $('선택요소').show() : 선택요소가 노출
+3. $('선택요소').toggle() : 선택요소가 숨김/노출 번갈아 됨
+4. $('선택요소').slidUp() :선택요소가 마치 창문의 블라인더와 같이 위로 말아 1.올라 간다
+5. $('선택요소').slideDown():선택요소가 아래로 말아 2.내려간다
+6. $('선택요소').slideToggle() :선택요소가 1,2아래/위로 번갈아
+7. $('선택요소').fadeOut() : 선택요소를 1.서서히 사라지게
+8. $('선택요소').fadeIn() :선택요소를 2.서서히 나타나게
+9. $('선택요소').fadeToggle(): 선택요소를 서서히1,2번를 실행 
+10.$('선택요소').fadeTo() : 선택 요소를 지정된 만큼 투명하게 변환시킬때
+
+형식)
+	$('선택요소').hide('속도', '콜백함수');
+	*속도 : slow, fast, normal, milliseconds(1000분의1 = 1초);
+	*콜백함수 : linear / swing
