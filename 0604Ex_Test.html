@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>온라인 앙케이트</title>
+	<style>
+		h1{text-align:center;}
+		input{margin:10px 10px;}
+		div{width:650px; height:500px; border:1px solid black;
+				background:#fdf9d7}
+	</style>
+<script type="text/javascript">
+/*	function answr(){
+		var result="";	
+		
+		if(f.sung[0].checked==true)
+				result+=f.sung[0].value+"\n";
+		else
+				result+=f.sung[1].value+"\n";
+
+		if(f.pyeoga[0].checked==true)
+				result+=f.pyeoga[0].value+"\n";
+		else if(f.pyeoga[1].checked==true)
+				result+=f.pyeoga[1].value+"\n";
+		else
+				result+=f.pyeoga[2].value+"\n";
+
+	for(i=0;i<5;i++){
+		if(f.see[i].checked==true)
+				result+=f.see[i].value+" ";
+		}
+
+	result+="\n"+f.remark.value+"\n"; 
+	alert(result);	
+	}*/
+	function answr(){
+		var result='';
+		var sung=document.getElementsByName("sung");
+		var pyeoga=document.getElementsByName("pyeoga");
+		var see=document.getElementsByName("see");
+		var remark=document.getElementsByName("remark");
+		console.log('비고='+remark[0].value);
+
+		if(sung[0].checked==true)
+			result+=sung[0].value+"\n";
+		else
+			resutl+=sung[1].value+"\n";
+		
+		for(var i=0;i<pyeoga.length;i++){
+			if(pyeoga[i].checked)
+				result+=pyeoga[i].value+"\n";
+		}
+
+		for(var i=0; i<see.length; i++){
+			if(see[i].checked==true)
+				result+=see[i].value+" ";
+		}
+		result+="\n"+remark[0].value+"";
+		alert(result);
+	}
+
+ </script>
+ </head>
+ <body>
+ <div>
+	<h1>온라인 앙케이트</h1>
+	<form id = 'f'>
+		1. 성별 ?<br>
+		　남<input type = 'radio' name='sung' value='남' checked>
+		　여<input type = 'radio' name='sung' value='여'><br><br>
+		2.본사의 제품을 평가한다면 ?<br>
+		　매우 만족 : <input type = 'radio' name='pyeoga' value='매우 만족' checked>
+			그저 그렇다 : <input type = 'radio' name='pyeoga' value='그저 그렇다'>
+			불만족스럽다 : <input type = 'radio' name='pyeoga'
+									value='불만족스럽다.'><br><br>
+		3.가장 자주 사용하는 검색엔진은 ? <br>
+		　심마니 : <input type = 'checkbox' value='삼마니' name='see'>
+		  네이버 정보탐정 : <input type = 'checkbox' value='네이버 정보탐정' name='see'>
+			야후 : <input type = 'checkbox' value='야후' name='see'>
+			라이코스 : <input type = 'checkbox' value='라이코스' name='see'>
+			알타비스타 : <input type = 'checkbox' value='알타비스타' name='see'><br><br>
+		4.본사에게 하고 싶은 말은 ? <br>
+		<center>
+		<textarea rows='6' cols='82' name='remark'></textarea>
+		<br><br>
+		<button onclick="answr()">앙케이트 작성</button>
+		<input type ='reset' value="앙케이트 취소">
+		</center>
+	</form>
+</div>
+</body>
+</html>
