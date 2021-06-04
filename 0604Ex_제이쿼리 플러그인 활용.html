@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	
+	<script src = '../jquery_workspace/js/jquery-1.8.1.min.js'></script>
+	<script src = '../jquery_workspace/js/jquery.magnify-1.0.2.js'>
+	</script>
+	<script type='text/javascript'>
+		$(document).ready(function(){
+			$('#d1').magnify();
+		});
+	</script>
+ </head>
+ <body>
+	<!-- 
+	bigimg0.jpg 화면에 출력할 이미지
+	smallimg0.jpg 마우스 올리면	확대되어 나타나는 효과-->
+	<a href="../jquery_workspace/images/bigimg0.jpg" id='d1'>
+		<img src="../jquery_workspace/images/smallimg0.jpg" alt="강아지">
+	</a>
+
+ </body>
+</html>

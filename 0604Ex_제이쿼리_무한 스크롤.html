@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		div{padding:5px;}
+		span{font-size:30px;}
+		div#con{width:200px; height:400px;}
+		input{float:right;}
+		#selectBtn{float:left;}
+	</style>
+	<script src='../jquery_workspace/js/jquery-1.9.1.min.js'>	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#selectBtn:button').click(function(){
+				var checkedList="";
+				var checkedConsole="";
+				$("input[name='hobby']:checkbox:checked").each(function(i){
+					console.log($("input[name='hobby']:checked"));
+					checkedList += $(this).prev().text()+i+"<br>";
+					checkedConsole += $(this).val()+"\t";
+				});
+				$('#contents').html(checkedList);
+				console.log(checkedConsole);
+			});
+		});//ready
+	</script>
+ </head>
+ <body>
+ <div id='con'>
+	<div>
+	 <span class='item'>음악 감상</span>
+		<input type='checkbox' name='hobby' value='music' style='zoom:2.0;'>
+	</div>
+	<div>
+	 <span class='item'>요가</span>
+		<input type='checkbox' name='hobby' value='yoga' style='zoom:2.0;'>
+	</div>
+	<div>
+	 <span class='item'>독서</span>
+		<input type='checkbox' name='hobby' value='reading' style='zoom:2.0;'>
+	</div>
+	<br>
+		<input type='button' id='selectBtn' value='취미 선택' style='zoom:2.0;'>
+	<div id='contents'> </div>
+ </div>
+ </body>
+</html>
