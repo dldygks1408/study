@@ -1,0 +1,41 @@
+<!-- 기존 이벤트 연결 메서드 대체(통합)
+	1.bind()		:	$(selector).on(eventName, eventHandler)
+	2.live()		:	$(document).on(eventName, 'selector', eventHandler)
+	3.delegate():	$('selector').on(eventName, 'selector', eventHandler)
+	
+	기존의 이벤트 연결 제거 메서드 대체(해당 이벤트의 모든 이벤트 핸들러를 제거하고자 하면 eventHandler를 생략한다.
+	1.unbind()		:	$(selector).off(eventName, eventHandler)
+	2.die()				: $(document).off(eventName, 'selector', eventHandler)
+	3.undelegate():	$('selector').off(eventName, 'selector', eventHandler)
+
+	live('이벤트명', 함수)	: 앞으로 새로 만들 요소에 이벤트 핸들러 함수를 연결하는 선택요소
+	on('이벤트명', 함수)		: 이벤트 연결 메서드
+	one('이벤트명', 함수)		: 현재 요소 한번만 이벤트 발생	 -->	
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+	<style>
+		p{background:yellow; font-weight:bold; cursor:pointer; padding:5px;}
+	</style>
+	<script src = '../jquery_workspace/js/jquery-1.9.1.min.js'></script>
+	<script type='text/javascript'>
+		$(document).ready(function(){
+			var i=0, sum=0;
+			$('p').on('click',function(){
+				i++;
+				sum+=i;
+				$(this).after('<p>또 다른 문단'+i+'</p>');
+				if(i >= 5){
+					alert('클릭 수 : ' + sum);
+					return false;
+				}
+			});
+		});
+	</script>
+  <title>Document</title>
+ </head>
+ <body>
+  <p>Click Me!!!</p>
+ </body>
+</html>

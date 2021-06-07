@@ -1,0 +1,73 @@
+<!-- 
+$data(1요소,2key, 3value)//값 설정==$('요소').data(key,value)
+  $('요소').data(key) : value값을 얻어오기
+: jquery내부에 사용자 정의 data를 저장하여 사용 할 수 있다.
+요소의 key에 value를 넣는다.
+저장된 data를 $('요소').data(key)로 불러올 수 있다. 
+ 요소.data(key)
+1. data를 저장할 대상 엘리먼트
+2. data 집합의 이름
+3. data 집합에 저장 할 값
+선택된 요소와 함께 연결된 data를 임의로 저장하거나 가져올 수 있다
+removeData 제거 -->
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+		#floatWindow{display:none;position:absolute;
+								width:500px;height:400px;top:100px;left:100px;}
+		#floatWindow a.close{ position:absolute;
+													right:20px;top:1px;}
+		#floatWindow a.close img{border:none;}
+		#floatWindow dl{width:100%;height:100%;
+										background:url('../jquery_workspace/images/floatWindow.png');margin:0}
+		#floatWindow dl dt{height:25px;line-height:25px;
+											text-indent:1em;color:white;
+											font-weight:bold;cursor:move;}
+		#floatWindow dl dd{margin:0;padding:2em;
+											line-height:1.5;text-indent:1em;}
+  </style>
+	<script src = '../jquery_workspace/js/jquery-1.8.1.min.js'></script>
+  <script type='text/javascript'>
+		$(document).ready(function(){
+			$('a.open').click(function(){
+				$('#floatWindow').fadeIn(2000);
+				return false;
+			});
+
+			$('#floatWindow a.close').click(function(){
+				$('#floatWindow').fadeOut(2000);
+				return false;
+			});
+
+			$('#floatWindow dl dt').mousedown(function(e){
+				$('#floatWindow').data('clickPointX',e.pageX - $('#floatWindow').offset().left).data('clickPointY',e.pageY - $('#floatWindow').offset().top);
+
+				$(document).mousemove(function(e){
+					$('#floatWindow').css({
+						top:e.pageY-$('#floatWindow').data('clickPointY')+'px',
+						left:e.pageX-$('#floatWindow').data('clickPointX')+'px'
+					});
+				});
+			}).mouseup(function(){
+				$(document).unbind('mousemove');
+			});
+		}); 
+	</script>
+ </head>
+ <body>
+	<a href='#floatWindow' class='open'>플로우팅 윈도우</a>
+	<div id='floatWindow'>
+		<a href='#' class='close'>
+			<img src='../jquery_workspace/images/close.png' alt='닫힘'>
+		</a>
+		<dl>
+			<dt>JQuery를 이용하여 플로우팅 윈도우 만들기</dt>
+			<dd>이번에 JQuery를 이용하여 프로우팅 윈도우...
+					윈도우를 표시 할 수 있습니다.</dd>
+		</dl>
+	</div>
+ </body>
+</html>

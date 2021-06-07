@@ -1,0 +1,47 @@
+<!-- 
+이벤트 처리시 어떤 이벤트가 어디에서 발생하였는지, 이벤트에 관한 정보가 필요 할 때가 있다.
+이러한 정보는 이벤트 객체형태로 얻어진다.
+이벤트 핸들러의 매개변수로 전달되어 온다.
+이벤트 정보가 필요없으면 이벤트 핸들러의 매개변수를 생략하지만, 이벤트 발생정보가 필요할때는 동작 함수
+(익명함수 = 콜백함수 = 이벤트핸들러)를 정의 할 때 매개변수를 추가 기술하면 된다.
+
+이벤트가 발생한 위치, 이벤트가 발생할 때 사용된 키보드/마우스의 키값에 관한 정보가 들어 있다.
+이런 정보들은 이벤트 객체의 프로퍼티 값으로 존재
+
+- 선택요소.focus(), blur() : 포커스를 얻을때/ 잃을때
+발생하는 이벤트 함수 사용자에 의해 입력 상자가 포커스를 얻을때/잃을때
+
+-event(동적으로 받아온 이벤트 정보 갖고 있는 객체).target():
+이벤트가 발생한 대상요소
+-->
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<script src = '../jquery_workspace/js/jquery-1.9.1.min.js'></script>
+  <script type='text/javascript'>
+		$(document).ready(function(){
+			$('input').val('아이디를 입력하세요').css('background','#ff0000');
+			
+			$('input').bind('focus',function(event){
+				console.log('이벤트값들 = '+event);
+				$(event.target).val('').css('background','orange');		
+				/*setInterval('see()',1500);*/
+			});
+
+			$('input').blur(function(e){
+				if($(e.target).val()==''){
+					$(e.target).val('아이디 입력').css('color','#9933ff');
+				}
+			});
+		});
+	/*	function see(){
+			location = '0603Ex_제이쿼리 문법_09_change.html';
+		}*/
+		</script>
+ </head>
+ <body>
+	<input type="text">
+ </body>
+</html>

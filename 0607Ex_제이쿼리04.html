@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<script src = '../jquery_workspace/js/jquery-1.9.1.min.js'></script>
+  <script type='text/javascript'>
+		$(document).ready(function(){
+
+		/*	$('img').click(function(){
+				$('img').css('width','+=10px');
+			});
+
+			$('img').mouseout(function(){
+				$('img').css('width','-=10px');
+			});*/
+	
+		$('img').bind({
+			click:function(){
+			$('img').css('width','+=10px');
+		},mouseout:function(){
+			$('img').css('width','-=10px');
+		}});
+	});
+//$('img').bind({
+//  함수명:익명함수(){},
+//  함수명:익명함수(){}
+//});
+/*$('img').bind({
+		mouseout:function(e){
+			var $target=$(e.target);
+			$target.width($target.width()-20);
+			$target.height($target.height()-20);
+			console.log(e);
+		},click:function(e){
+			var $target=$(e.target);
+			$target.width($target.width()+20);
+			$target.height($target.height()+20);
+			console.log(e);
+		}}); */
+	</script>
+ </head>
+ <body>
+	<img src="../jquery_workspace/images/photo6.jpg">
+ </body>
+</html>

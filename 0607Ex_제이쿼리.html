@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<script src = '../jquery_workspace/js/jquery-1.9.1.min.js'></script>
+  <script type='text/javascript'>
+		$(document).ready(function(){
+			$('img').css('width',150);
+			let cnt = 0;
+			let s = setInterval(function(){
+				console.log('count = ' + cnt);
+				$('img').first().appendTo('body');
+					if(cnt == 10){
+						clearInterval(s);
+						alert('10번 끝');
+					}
+				cnt++;
+			},1000);
+		});
+	/* setInterval(처리할 함수, 지연시간)
+			 - 반복적으로 자동 실행하는 함수
+			 - 일정시간마다 함수를 반복해서 실행
+		id = setTimeout(처리할 함수, 지연시간)
+			 - 일정시간 후에 함수를 한번만 실행
+		clearTimeout(id)
+			 - 일정시간 후에 함수를 한번 실행하는 것 중지
+		clearInterval(id)
+			 - 일정시간마다 함수를 반복하는 것 중지 */
+	</script>
+ </head>
+ <body>
+	<img src="../jquery_workspace/images/Koala.jpg">
+	<img src="../jquery_workspace/images/Lighthouse.jpg">
+	<img src="../jquery_workspace/images/Hydrangeas.jpg">
+	<img src="../jquery_workspace/images/Jellyfish.jpg">
+	<img src="../jquery_workspace/images/Desert.jpg">
+ </body>
+</html>
