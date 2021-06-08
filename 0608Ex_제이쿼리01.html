@@ -1,0 +1,96 @@
+<!-- 
+$data(1요소,2key, 3value)//값 설정==$('요소').data(key,value)
+  $('요소').data(key) : value값을 얻어오기
+: jquery내부에 사용자 정의 data를 저장하여 사용 할 수 있다.
+요소의 key에 value를 넣는다.
+저장된 data를 $('요소').data(key)로 불러올 수 있다. 
+ 요소.data(key)
+1. data를 저장할 대상 엘리먼트
+2. data 집합의 이름
+3. data 집합에 저장 할 값
+선택된 요소와 함께 연결된 data를 임의로 저장하거나 가져올 수 있다
+removeData 제거 -->
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+		table{margin:100px auto;}
+		.odd{background:#00cc00;}
+		th{background:#222; color:white;}
+		th,td{padding:5px; font-size:small;}
+		.even{background:#00ffcc;}
+		.odd1{background:#ccffff;}
+		tr:not(:first-child):hover{background:#ff66cc;}
+  </style>
+	<script src = '../jquery_workspace/js/jquery-1.8.1.min.js'></script>
+  <script type='text/javascript'>
+		$(document).ready(function(){
+			$('th:nth-child(odd)').addClass('odd'); 
+			$('tr:nth-child(even)').addClass('even');
+			$('tr:nth-child(odd)').addClass('odd1');
+		}); 
+	</script>
+ </head>
+ <body>
+    <table border="2px">
+			<th>순번</th>
+			<th>이름</th>
+			<th>전화번호</th>
+			<th>부서</th>
+			<th>주소</th>
+			
+			<tr>
+					<td>1</td>
+					<td>김강호</td>
+					<td>010-111-111</td>
+					<td>인사부</td>
+					<td>서울</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>권유미</td>
+					<td>010-111-112</td>
+					<td>관리부</td>
+					<td>서울</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>우미라</td>
+					<td>010-111-113</td>
+					<td>영업부</td>
+					<td>서울</td>
+			</tr>
+			<tr>
+					<td>4</td>
+					<td>김예솔</td>
+					<td>010-111-114</td>
+					<td>인사부</td>
+					<td>서울</td>
+			</tr>
+			<tr>
+					<td>5</td>
+					<td>조희제</td>
+					<td>010-111-115</td>
+					<td>관리부</td>
+					<td>대전</td>
+			</tr>
+			<tr>
+					<td>6</td>
+					<td>이승준</td>
+					<td>010-111-116</td>
+					<td>인사부</td>
+					<td>광주</td>
+			</tr>
+			<tr>
+					<td>7</td>
+					<td>정선영</td>
+					<td>010-111-117</td>
+					<td>인사부</td>
+					<td>서울</td>
+			</tr>
+	</table>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+		body{background:#777; color:white;}
+		a{color:#00ccff;}
+		h1{width:80%; margin:10px auto;}
+		p{margin:auto;}
+		span.tooltip{line-height:1.5; color:white; width:200px;
+								background:#ff9900; border:2px solid white;
+								padding:1em; font-size:small;}
+  </style>
+	<script src = '../jquery_workspace/js/jquery-1.8.1.min.js'></script>
+  <script type='text/javascript'>
+		$(document).ready(function(){
+			$('span.tooltip').css({
+				//속성:값 설정
+				opacity:'0.8',
+				position:'absolute',
+				display:'none'
+			});
+			$('a').mouseover(function(){
+				$('span.tooltip').fadeIn();
+			}).mouseout(function(){
+				$('span.tooltip').fadeOut();	
+			}).mousemove(function(e){
+				$('span.tooltip').css({
+					'top':e.pageY+10+'px',
+					'left':e.pageY+10+'px'
+			});
+		});
+		});
+	</script>
+ </head>
+ <body>
+  <h1>Tooltip 설정하기</h1>
+	<p>
+		<a href='#'>툴팁 연습중...</a>
+		<span class='tooltip'>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br>이런것이 바로 툴팁이다!!!<br></span>
+		aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+	</p>
+ </body>
+</html>

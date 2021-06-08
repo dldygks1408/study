@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+		*{margin:0;padding:0;}
+		dl{width:380px;margin:50px auto;}
+		p{width:350px; word-break:break-all; margin:auto; padding:10px;}
+		dl dt{background:#6699ff; cursor:pointer;
+					border-bottom:3px solid #cc0033;}
+		dl dd{ border:1px solid #7cadb6; border-top:none; height:200px;}
+  </style>
+	<script src = '../jquery_workspace/js/jquery-1.8.1.min.js'></script>
+  <script type='text/javascript'>
+		$(document).ready(function(){
+			$('dd:not(:first)').css('display','none');
+			$('dl dt').click(function(){
+				if($('+dd',this).css('display')=='none'){
+					$(this).siblings('dd').slideUp(2000);
+					$('+dd',this).slideDown(2000);
+				}
+			});
+		}); 
+	</script>
+ </head>
+ <body>
+  <div id='container'>
+		<dl>
+			<dt>JQuery</dt>
+			<dd><p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+			</dd>
+
+			<dt>HTML5</dt>
+			<dd><p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+			</dd>
+			
+			<dt>JSP</dt>
+			<dd><p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+			</dd>
+		</dl>  
+	</div>
+ </body>
+</html>

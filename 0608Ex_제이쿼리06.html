@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/rest.css"/>
+	<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	<style type="text/css">
+		body{background:#484540; padding:20px 0 40px;}
+		.grid_2{background:#fff; width:530px;}
+		.hover{cursor:pointer;}
+	</style>
+	<script src="../jquery_workspace/js/jquery.js"></script>
+<!-- 화면전화 플러그인 jquery.malsup.com/cycle -->
+	<script src="../jquery_workspace/js/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#s1').cycle({
+				fx:'wipe',//효과방식(shuffle,fade,zoom,wipe,toss,curtain,growy)
+				speed:300,//속도
+				next:'#next1',//클릭되면 다음 이미지 나타나게
+				prev:'#prev1',//클릭되면 이전 이미지 나타나게
+				timeout:0//전환효과 사이에 시간간격 결정 /0애니메이션 없음
+			});//cycle end 
+			$('#next1').hover(function(){
+				$(this).css("cursor","pointer").
+				attr("src","../jquery_workspace/images/next_on.jpg");
+			},function(){
+				$(this).attr("src","../jquery_workspace/images/next_off.jpg");
+			}
+			);
+		// --------------------------
+			$('#prev1').hover(function(){
+				$(this).addClass('hover').attr('src','../jquery_workspace/images/prev_on.jpg');
+			},function(){
+				$(this).attr('src','../jquery_workspace/images/prev_off.jpg');
+			}
+			);
+		});//ready end
+	</script>
+</head>
+<body> 
+	<div class="clear"> </div>
+	<div class="grid_2 first" style="padding-left:10px">
+	<div id="s1" style="margin-top:10px">
+		<img src="../jquery_workspace/images/image6.jpg" width="520" height="345"/>
+		<img src="../jquery_workspace/images/image3.jpg" width="520" height="345"/>
+		<img src="../jquery_workspace/images/img10.jpg" width="520" height="345"/>
+		<img src="../jquery_workspace/images/image7.jpg" width="520" height="345"/>
+		<img src="../jquery_workspace/images/image5.jpg" width="520" height="345"/>
+		<img src="../jquery_workspace/images/image4.jpg" width="520" height="345"/>
+	</div>
+	<div align="right" style="margin-top:5px">
+	MORE
+	<!-- < 화살표 -->
+	<img src="../jquery_workspace/images/prev_off.jpg" width="10" height="11" alt="pre" title="pre"
+	name="images/prev_on.jpg" id="prev1" style="margin-right:10px"/>
+	<!-- > 화살표 -->
+	<img src="../jquery_workspace/images/next_off.jpg" width="10" height="11" alt="next" title="next"
+	name="images/next_on.jpg" id="next1" style="margin-right:10px"/>
+	</div>
+	</div>
+</body>
+</html>
