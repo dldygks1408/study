@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type='text/css'>
+	td{border:1px solid red}
+</style>
+<script src='js/jquery-1.11.1.js'></script>
+<script>
+   
+      $(function() {
+         //$.getJSON('item.json',function(data,textStaus){
+       	 $.get('item.xml',function(data,t){
+            
+            $('#treeData').append(
+                  '<tr>' +
+                     '<td>id</td>' +
+                     '<td>name</td>' +
+                     '<td>price</td>' +
+                     '<td>description</td>' +
+                  '</tr>'
+                  );
+            console.log(t+", "+data);
+            //console.log(textStaus+", "+data);
+            
+            $(data).find('item').each(function(i){
+               console.log(i+"번");
+               var $item=$(this);
+               $('#treeData').append (
+                  '<tr>' +
+                     '<td>' + $item.attr("id") + '</td>' +
+                     '<td>' + $item.attr("name") + '</td>' +
+                     '<td aling="right">' + $item.find("price") + '</td>' +
+                     '<td>' + $item.find("description").text() + '</td>' +
+                  '</tr>'
+                  );
+            });
+         });
+      });
+      
+   </script>
+
+</head>
+<body>
+	<table id='treeData'>
+	</table>
+</body>
+</html>

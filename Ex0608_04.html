@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type='text/css'>
+	div{width:180px;
+			height:80px;
+			margin:3px;
+			float:left;
+			}
+</style>
+<script src='js/jquery-1.11.1.js'></script>
+<script>
+	$(function(){
+		$('#menu1').click(function(){
+			$('#message1').toggle(function(){
+				$.ajax({
+					url:'menu1.html',
+					dataType:'html',
+					//요청이 성공했을때 호출 서버로부터 응답받은
+					//data는 콜백함수의 매개변수로 전달됨
+					success:function(data){
+						//alert('성공했을때 메뉴에 값'+data);
+						$('#message1').html(data);
+					}
+				});//ajax end
+				return false;
+			});
+		});// #menu1
+		$('#menu2').click(function(){
+			$('#message2').toggle(function(){
+				$.ajax({
+					url:'menu1.html',
+					dataType:'html',
+					success:function(data){
+						//alert('성공했을때 메뉴에 값'+data);
+						$('#message2').html($(data).find('li'));
+					}
+				});//ajax end
+				return false;
+			});
+		});// #menu2		
+	});
+</script>
+</head>
+<body>
+<div>
+	<a href='#' id='menu1'>메뉴 보기 1</a>
+	<br/>
+	<span id='message1'></span>
+</div>
+<div>
+	<a href='#' id='menu2'>메뉴 보기 2</a>
+	<br/>
+	<span id='message2'></span>
+</div>
+</body>
+</html>

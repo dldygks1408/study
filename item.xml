@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item id='1' name='레몬'>
+		<price>1000</price>
+		<description>
+			레몬에 포함되어 있는 쿠엔산은 피로회복에 좋다.
+		</description>
+	</item>
+	<item id='2' name='키위'>
+		<price>2000</price>
+		<description>
+			키위에 포함되어 있는 쿠엔산은 피로회복에 좋다.
+		</description>
+	</item>
+	<item id='3' name='블루베리'>
+		<price>3000</price>
+		<description>
+			블루베리에 포함되어 있는 쿠엔산은 피로회복에 좋다.
+		</description>
+	</item>
+	<item id='4' name='체리'>
+		<price>4000</price>
+		<description>
+			체리에 포함되어 있는 쿠엔산은 피로회복에 좋다.
+		</description>
+	</item>
+	<item id='5' name='메론'>
+		<price>5000</price>
+		<description>
+			메론에 포함되어 있는 쿠엔산은 피로회복에 좋다.
+		</description>
+	</item>
+	
+	
+</items>
