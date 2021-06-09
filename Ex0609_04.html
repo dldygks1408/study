@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type='text/css'>
+	form{width:380px; padding:10px; border:1px solid black;}
+	#right{float:right;}
+</style>
+<script src='../js/jquery-1.11.1.js'></script>
+<script>
+	$(function(){
+		$('#submit').click(function(){ //누르면
+			$('#result').empty();
+			
+			var form_data=$('form').serializeArray();
+			console.log(form_data);
+			
+			$.each(form_data, function(index, value){
+				$('#result').append(index+''+value.name+'='+value.value+'<br>');
+			})
+		});//$('#submit').click
+	});//ready
+</script>
+</head>
+<body>
+<center>
+	<form>
+		<input type='hidden' name='seq' value='1'>
+		<label>이름을 입력하세요.</label>
+		<input type='text' name='username' id='right'> <br><br>
+		<label>패스워드를 입력하세요.</label>
+		<input type='password' name='password' id='right'><br><br><br>
+		<input type='checkbox' name='hobby' value='music'>music
+		<input type='checkbox' name='hobby' value='yoga'>yoga
+		<input type='checkbox' name='hobby' value='reading'>reading	<br><br>
+		<input type='button' id='submit' value='전송'><br>
+	</form>	
+		<div id="result"> </div>
+</center>	
+</body>
+</html>

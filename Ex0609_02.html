@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type='text/css'>
+	
+</style>
+<script src='../js/jquery-1.11.1.js'></script>
+<script>
+	$(function(){
+		$('#submit').click(function(){ //누르면
+			var username=$('.username').val(); //담고
+			var pwd=$('.password').val(); // 담고
+			var sendData='username=' + username + '&password=' + pwd; //담고
+			
+			$.ajaxSetup({ //jQuery ajax에 대한 공통적인 기본 설정들을 지정
+				type:'POST',
+				url:'logincheck.jsp', //서버로 보낼 url
+				dataType:'text',			//서버에서 응답 결과로 반환되는 데이터 형식
+				success:function(msg){//요청이 성공했을때 실행
+					console.log(msg);
+					$('#message').html(msg);
+				}
+			});//ajaxSetup
+			
+			$.ajax({
+				data:sendData
+			});
+			return false;
+		});//$('#submit').click
+	});//ready
+</script>
+</head>
+<body>
+	<form>
+		<label>이름을 입력하세요.</label>
+		<input type='text' name='username' class='username' value='admin'><br>
+		<label>패스워드를 입력하세요.</label>
+		<input type='password' name='password' class='password' value='1234'><br>
+		<input type='button' id='submit' value='전송'><br>
+	</form>	
+	<div id="message"> </div>
+</body>
+</html>
