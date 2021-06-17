@@ -1,0 +1,29 @@
+.containerrr{
+    text-align: center;
+    margin-top: 70px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.items{
+    margin-top: 50px;
+    float: left;
+    width: 25%;
+}
+
+
+@media screen and (max-width: 768px){
+    .items{
+        float: none;
+        width: 100%;
+    }
+  }
+
+@media screen and (max-width: 992px) {
+    .items{
+        width: 50%;
+    }
+    .containerrr{
+        max-width: 800px;
+    }
+}
